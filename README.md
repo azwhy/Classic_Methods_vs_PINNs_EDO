@@ -1,22 +1,22 @@
 # Resolución de Ecuaciones Diferenciales con PINNs vs Métodos Clásicos
 
-[cite_start]Este repositorio contiene la implementación del proyecto de investigación y validación empírica desarrollado para la asignatura **MAT-274: Análisis Numérico II** en la **Universidad Técnica Federico Santa María**.
+Este repositorio contiene la implementación del proyecto de investigación y validación empírica desarrollado para la asignatura **MAT-274: Análisis Numérico II** en la **Universidad Técnica Federico Santa María**.
 
-[cite_start]El estudio evalúa, analiza y contrasta el rendimiento del método de aproximación funcional basado en Redes Neuronales Informadas por la Física (**PINNs**) frente a esquemas numéricos tradicionales de discretización temporal[cite: 337].
+El estudio evalúa, analiza y contrasta el rendimiento del método de aproximación funcional basado en Redes Neuronales Informadas por la Física (**PINNs**) frente a esquemas numéricos tradicionales de discretización temporal.
 
 ---
 
 ## Descripción del Problema
 
-[cite_start]Se aborda el problema de valor inicial (PVI) para un **oscilador armónico simple**, un fenómeno físico de movimiento conservativo en un horizonte de tiempo $t \in [0, T]$ regido por la siguiente ecuación diferencial ordinaria (EDO) de segundo orden[cite: 335, 336]:
+Se aborda el problema de valor inicial (PVI) para un **oscilador armónico simple**, un fenómeno físico de movimiento conservativo en un horizonte de tiempo $t \in [0, T]$ regido por la siguiente ecuación diferencial ordinaria (EDO) de segundo orden:
 
 $$\frac{d^2x}{dt^2} + \omega^2x = 0$$
 
-[cite_start]Sujeto a las condiciones iniciales autónomas de desplazamiento y velocidad[cite: 336]:
+Sujeto a las condiciones iniciales autónomas de desplazamiento y velocidad:
 
 $$x(0) = x_0 = 1, \quad \left.\frac{dx}{dt}\right|_{t=0} = v(0) = v_0 = 0$$
 
-[cite_start]Donde $\omega$ representa la frecuencia angular del sistema, fijada en $\frac{\pi}{2}$[cite: 336]. [cite_start]Este sistema dinámico lineal posee una solución analítica exacta y única dada por:
+Donde $\omega$ representa la frecuencia angular del sistema, fijada en $\frac{\pi}{2}$[cite: 336].Este sistema dinámico lineal posee una solución analítica exacta y única dada por:
 
 $$x(t) = \cos(\omega t)$$
 
@@ -72,7 +72,7 @@ $$Loss_{Cond.Ini}(\theta) = (\hat{x}(0; \theta) - 1.0)^2 + \left( \frac{d\hat{x}
 
 ---
 
-## 🔬 Análisis y Resultados Cuantitativos
+## Análisis y Resultados Cuantitativos
 
 [cite_start]Los estadísticos numéricos derivados del procesamiento de las simulaciones en un horizonte extendido de largo plazo ($T = 50$, $N = 500$ nodos, paso $h = 0.1$) arrojaron las siguientes métricas frente a la solución analítica exacta[cite: 406, 408, 418]:
 
@@ -128,9 +128,9 @@ $$\|\nabla_{\theta} Loss_{fisica}(\theta)\| \gg \|\nabla_{\theta} Loss_{Cond.Ini
 
 * [cite_start]**Dominio de Métodos Clásicos:** Para EDOs lineales y conservativas simples, los esquemas tradicionales entregan precisiones rigurosas de manera instantánea[cite: 435, 436].
 * [cite_start]**Falla de Causalidad en PINNs:** Resolver simultáneamente todos los estadios del dominio continuo destruye la causalidad temporal natural del fenómeno físico[cite: 436, 437].
-* [cite_start]**Ámbito de Aplicación Real:** Las PINNs no son útiles para competir frente a métodos tradicionales en problemas elípticos o lineales simples de baja dimensionalidad, sino en escenarios de **descubrimiento de leyes físicas (SciML) y resolución de problemas inversos acoplados multidimensionales**[cite: 438].
+* [cite_start]**Ámbito de Aplicación Real:** Las PINNs no son útiles para competir frente a métodos tradicionales en problemas elípticos o lineales simples de baja dimensionalidad, sino en escenarios de **descubrimiento de leyes físicas y resolución de problemas inversos acoplados multidimensionales**[cite: 438].
 
 
-## 📚 Referencias
+## Referencias
 * [1] Savović, S., Ivanović, M. R., and Min, R. (2023). *A Comparative Study of the Explicit Finite Difference Method and Physics-Informed Neural Networks for Solving the Burgers' Equation*. Axioms, vol. 12, no. [cite_start]10, 982[cite: 439, 440].
 * [2] Wang, S., Sankaran, S., Wang, H., and Perdikaris, P. (2023). [cite_start]*An Expert's Guide to Training Physics-Informed Neural Networks*. arXiv preprint arXiv:2304.08289[cite: 440, 441].
